@@ -1,6 +1,7 @@
 import 'package:bloc_app/bloc/counter/counter_bloc.dart';
 import 'package:bloc_app/bloc/counter/counter_event.dart';
 import 'package:bloc_app/bloc/counter/counter_state.dart';
+import 'package:bloc_app/views/example_two.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,6 +18,14 @@ class _CounterScreenState extends State<CounterScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Block'),
+        actions: [
+        GestureDetector(
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context)
+            =>const ExampleTwo()));
+          },
+          child: const  Icon(Icons.arrow_forward_ios,color: Colors.white,))
+        ],
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -55,7 +64,7 @@ class _CounterScreenState extends State<CounterScreen> {
                     ),
                   ),
                 ),
-              ),
+              ), 
               const SizedBox(
                 width: 20,
               ),
